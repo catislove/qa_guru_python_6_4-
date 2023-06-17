@@ -1,3 +1,4 @@
+import random
 from math import pi
 
 
@@ -39,10 +40,12 @@ def test_circle():
     r = 23
     # TODO сосчитайте площадь
     area = pi * r ** 2
+    print("Площадь круга равна ", area)
     assert area == 1661.9025137490005
 
     # TODO сосчитайте длину окружности
     length = 2 * pi * r
+    print("Длина окружности равна ", length)
     assert length == 144.51326206513048
 
 
@@ -52,7 +55,7 @@ def test_random_list():
     """
 
     # TODO создайте список
-    l = [3, 54, 87, 1, 39, 71, 99, 26, 47, 6]
+    l = random.sample(range(1, 100), 10)
     l.sort()
     print(l)
     assert len(l) == 10
@@ -82,5 +85,6 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
+    print(d.values())
     assert isinstance(d, dict)
     assert len(d) == 5
